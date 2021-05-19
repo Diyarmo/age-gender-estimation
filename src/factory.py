@@ -14,7 +14,7 @@ def get_model(cfg):
     pred_gender = Dense(units=2, activation="softmax", name="pred_gender")(features)
     pred_age = Dense(units=101, activation="softmax", name="pred_age")(features)
     model = Model(inputs=base_model.input, outputs=[pred_gender, pred_age])
-    return model
+    return model, base_model
 
 
 def get_optimizer(cfg):
